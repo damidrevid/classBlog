@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 <body>
-    <h1>Dami</h1>
+    <div class="page-header">
+        <h1>Dami</h1>
+    </div>
+
+    <div class="content container">
+        <div class="row">
+
+        
+        <div class="col-md-8">
+
+        
+
+    {% for i in posts %}
+        <!-- {{i}} -->
+             
+            <div class="post">
+                <p>published: {{i.published_date }}</p>
+                <h2><a href="">{{i.title}}</a></h2>
+                <p>{{ i.text | linebreaksbr }}</p>
+            </div>
+        <hr style="color: #C25100;">
+           
+        </div>
+    {% endfor %}
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

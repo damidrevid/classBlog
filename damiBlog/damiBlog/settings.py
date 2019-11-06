@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'classBlog',
+
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,15 @@ WSGI_APPLICATION = 'damiBlog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql', #Your database engine
+        'HOST': 'localhost', #host name
+        'NAME': 'hospital', #Name of your DB
+        'USER': 'Drevid', #Name of user in database
+        'PASSWORD': 'LenovoL440', #The user's password
+        'PORT': '3306' #Database port number
+
     }
 }
 
