@@ -1,7 +1,3 @@
-{% extends 'classBlog/base.html' %} <!--Extending the boiler plate ( i.e template) on base.html-->
-
-{% block content %} 
-
 {% for i in posts %}  
 
     <div class="row">
@@ -9,16 +5,12 @@
               <div class="card">
                 <div class="card-body">
                   <p>published: {{i.published_date }}</p>
-                    <h2><a href="{% url 'post_detail' pk=i.pk %}">{{i.title}}</a></h2>
+                    <h2><a href="">{{i.title}}</a></h2>
                     <p>{{ i.text | linebreaksbr }}</p>
                   <a href="#" class="btn btn-primary">Continue</a>
                 </div>
               </div>
             </div>
-            
-            
-          
-    
             <div class="col-sm-6">
                     <div class="card">
                       <div class="card-body">
@@ -29,6 +21,14 @@
                       </div>
                     </div>
                   </div>
-          </div> -->
-{% endfor %}
-{% endblock %}
+          </div>
+    <!-- <div class="card">
+        <div class="card-body">        
+            <p>published: {{i.published_date }}</p>
+            <h2><a href="">{{i.title}}</a></h2>
+            <p>{{ i.text | linebreaksbr }}</p>
+        </div>
+    </div> -->
+        <br>
+        </div>
+    {% endfor %}

@@ -1,0 +1,24 @@
+{% extends 'classBlog/base.html' %} <!--Extending the boiler plate ( i.e template) on base.html-->
+
+{% block content %} 
+
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+       {% if reveal.published_date %}
+            <div class="date">
+                {{reveal.published_date}}
+            </div>
+        {% endif %}
+
+        <h2>{{ reveal.title }}</h2>
+        <p> {{ reveal.text | linebreaksbr }}</p>
+   </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
